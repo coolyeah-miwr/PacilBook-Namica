@@ -1,0 +1,8 @@
+connectorId: example
+generate:
+  javascriptSdk:
+    - outputDir: ..\..\pacilbook\src\dataconnect-generated
+      package: "@dataconnect/generated"
+      packageJsonDir: ..\..\pacilbook
+      react: false
+      angular: false
