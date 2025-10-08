@@ -509,15 +509,17 @@ const AppContent: React.FC = () => {
     }
 
     switch (view) {
-      case 'rak':
-        return <RakView 
-          recommendedBooks={recommendedBooks} 
-          newBooks={newBooks} 
-          lastReadBooks={lastReadBooks} 
-          onSelectBook={handleSelectBook} 
-          onAddToBag={handleOpenAddToBagModal}
-          onDownload={handleDownloadBook}
-        />;
+case 'rak':
+  return <RakView 
+    recommendedBooks={recommendedBooks} 
+    newBooks={newBooks} 
+    lastReadBooks={lastReadBooks} 
+    onSelectBook={handleSelectBook} 
+    onAddToBag={handleOpenAddToBagModal}
+    onDownload={handleDownloadBook}
+    scrapedBooks={scrapedBooks} 
+    isSupabaseLoading={isSupabaseLoading}
+  />;
       case 'punyaku':
         return <PunyakuView books={myBooks} onSelectBook={handleSelectBook} onDeleteBook={handleDeleteBook} />;
       case 'bag':
@@ -550,15 +552,17 @@ const AppContent: React.FC = () => {
       case 'bantuan':
         return <BantuanView onBack={() => setView('rak')} />;
       default:
-        return <RakView 
-          recommendedBooks={recommendedBooks} 
-          newBooks={newBooks} 
-          lastReadBooks={lastReadBooks} 
-          onSelectBook={handleSelectBook}
-          onAddToBag={handleOpenAddToBagModal}
-          onDownload={handleDownloadBook}
-        />;
-    }
+  return <RakView 
+    recommendedBooks={recommendedBooks} 
+    newBooks={newBooks} 
+    lastReadBooks={lastReadBooks} 
+    onSelectBook={handleSelectBook}
+    onAddToBag={handleOpenAddToBagModal}
+    onDownload={handleDownloadBook}
+    scrapedBooks={scrapedBooks} 
+    isSupabaseLoading={isSupabaseLoading}
+  />;
+  }
   };
   
   if (!isAuthenticated) {
